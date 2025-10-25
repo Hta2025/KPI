@@ -1,0 +1,72 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدخال مؤشرات الأداء</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f4f4f9; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #333; }
+    .filters { display: flex; gap: 15px; margin-bottom: 20px; align-items: center; flex-wrap: wrap; }
+    .filters select, .filters button { padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+    .filters button { background-color: #007bff; color: white; cursor: pointer; border: none; }
+    .filters button:hover { background-color: #0056b3; }
+    .kpi-item { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+    .kpi-item h3 { margin-top: 0; }
+    .kpi-item p { color: #555; font-style: italic; }
+    .input-group { display: flex; gap: 10px; align-items: center; margin-top: 10px; }
+    .input-group input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100px; }
+    .input-group span { font-weight: bold; }
+    #submitBtn { display: block; width: 100%; padding: 15px; background-color: #28a745; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 20px; }
+    #submitBtn:hover { background-color: #218838; }
+    #status { text-align: center; margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>نظام إدخال مؤشرات الأداء الشهرية</h1>
+    
+    <div class="filters">
+      <label>الدائرة:</label>
+      <select id="departmentSelect">
+        <option value="">-- اختر الدائرة --</option>
+      </select>
+      
+      <label>السنة:</label>
+      <select id="yearSelect">
+        <!-- سيتم ملؤها بواسطة JavaScript -->
+      </select>
+      
+      <label>الشهر:</label>
+      <select id="monthSelect">
+        <option value="1">يناير</option>
+        <option value="2">فبراير</option>
+        <option value="3">مارس</option>
+        <option value="4">أبريل</option>
+        <option value="5">مايو</option>
+        <option value="6">يونيو</option>
+        <option value="7">يوليو</option>
+        <option value="8">أغسطس</option>
+        <option value="9">سبتمبر</option>
+        <option value="10">أكتوبر</option>
+        <option value="11">نوفمبر</option>
+        <option value="12">ديسمبر</option>
+      </select>
+      
+      <button id="loadKpisBtn">تحميل المؤشرات</button>
+    </div>
+
+    <div id="kpiContainer">
+      <!-- سيتم ملؤها ديناميكياً -->
+    </div>
+
+    <button id="submitBtn" style="display:none;">حفظ وإرسال</button>
+    <div id="status"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
